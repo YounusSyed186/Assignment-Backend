@@ -16,8 +16,9 @@ const register = async (req, res, next) => {
     // set httpOnly cookie
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      secure: true,
+      sameSite: 'none',
+      path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
@@ -40,10 +41,12 @@ const login = async (req, res, next) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      secure: true,
+      sameSite: 'none',
+      path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
+
 
     res.json({ user: { id: user._id, name: user.name, email: user.email, role: user.role }, token });
   } catch (err) {
