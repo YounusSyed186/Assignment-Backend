@@ -3,6 +3,9 @@
 A lightweight **Node.js REST API** for task management. This backend provides user authentication, task management endpoints, and Swagger API documentation.
 
 ---
+# Demo Admin credential
+email:admin1@gmail.com
+password:admin1
 
 ## 📁 Project Structure
 
